@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700;800&family=Inter:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Brand colors matched to Remedy Rx logo */
+  --remedy-blue: #1b3899;   /* Navy blue — "COOLING" from logo */
+  --remedy-dark: #0f2461;   /* Darker navy — headers, footer */
+  --remedy-orange: #cc2222; /* Brand red — "REMEDY" Rx mark, CTAs */
+  --remedy-teal: #cc2222;   /* Unified to brand red */
+  --remedy-mist: #f4f7fa;
+  --remedy-emergency: #cc2222;
+}
+
+@theme {
+  --color-remedy-blue: #1b3899;
+  --color-remedy-dark: #0f2461;
+  --color-remedy-orange: #cc2222;
+  --color-remedy-teal: #cc2222;
+  --color-remedy-mist: #f4f7fa;
+  --color-remedy-emergency: #cc2222;
+  --font-barlow: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #1a2430;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-barlow);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
