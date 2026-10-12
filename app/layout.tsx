@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GTMHead, GTMBody } from "@/components/GoogleTags";
+import { GTMHead, GTMBody, GA4 } from "@/components/GoogleTags";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -56,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GTMHead />
+        <GA4 />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
