@@ -56,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GTMHead />
+        <GA4 />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
@@ -67,7 +68,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyCallBar />
-        <GA4 />
       </body>
     </html>
   );

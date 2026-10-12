@@ -8,7 +8,6 @@
  * snippets appear twice in the page source. Client component output is only
  * rendered once into the HTML, so the snippets show up exactly once.
  */
-import Script from "next/script";
 
 const GTM_ID = "GTM-TZZWKFDZ";
 const GA4_ID = "G-LG8RXV6DDZ";
@@ -38,20 +37,19 @@ export function GTMBody() {
   );
 }
 
-/** GA4 (gtag.js) */
+/** GA4 (gtag.js) — plain tags exactly as Google provides (no next/script preload) */
 export function GA4() {
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA4_ID}');`}
-      </Script>
+gtag('config', '${GA4_ID}');`,
+        }}
+      />
     </>
   );
 }
