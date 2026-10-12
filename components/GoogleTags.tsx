@@ -10,7 +10,6 @@
  */
 
 const GTM_ID = "GTM-TZZWKFDZ";
-const GA4_ID = "G-LG8RXV6DDZ";
 
 const GTM_HEAD = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -37,19 +36,4 @@ export function GTMBody() {
   );
 }
 
-/** GA4 (gtag.js) — plain tags exactly as Google provides (no next/script preload) */
-export function GA4() {
-  return (
-    <>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`} />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA4_ID}');`,
-        }}
-      />
-    </>
-  );
-}
+// GA4 (G-LG8RXV6DDZ) is fired from inside the GTM container — do NOT hardcode it here.
