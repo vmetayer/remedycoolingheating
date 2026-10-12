@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SERVICES, PHONE_TEL, PHONE_DISPLAY } from "@/lib/site";
+import { submitLead } from "@/lib/submitLead";
 
 type State = "idle" | "submitting" | "success" | "error";
 
@@ -13,22 +14,10 @@ export default function HeroForm() {
     setState("submitting");
 
     const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch("https://formspree.io/f/xkjgbqwn", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-
-      if (res.ok) {
-        setState("success");
-        form.reset();
-      } else {
-        setState("error");
-      }
-    } catch {
+    if (await submitLead(form, "homepage_quote")) {
+      setState("success");
+      form.reset();
+    } else {
       setState("error");
     }
   }

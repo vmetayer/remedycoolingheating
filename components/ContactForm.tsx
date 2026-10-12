@@ -2,11 +2,24 @@
 
 import { useState } from "react";
 import { PHONE_DISPLAY, PHONE_TEL, CITIES } from "@/lib/site";
+import { submitLead } from "@/lib/submitLead";
 
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  if (sent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setState("submitting");
+    const form = e.currentTarget;
+    if (await submitLead(form, "contact_page")) {
+      setState("success");
+      form.reset();
+    } else {
+      setState("error");
+    }
+  }
+
+  if (state === "success") {
     return (
       <div className="rounded-xl bg-white p-8 text-center shadow-md">
         <p className="text-lg font-semibold text-remedy-dark">
@@ -25,10 +38,7 @@ export default function ContactForm() {
   return (
     <form
       className="grid gap-4 rounded-xl bg-white p-6 shadow-md sm:p-8"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-      }}
+      onSubmit={handleSubmit}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
@@ -91,11 +101,21 @@ export default function ContactForm() {
           placeholder="What's going on with your system?"
         />
       </div>
+      {state === "error" && (
+        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+          Something went wrong. Please try again or call{" "}
+          <a href={PHONE_TEL} className="font-bold underline">
+            {PHONE_DISPLAY}
+          </a>
+          .
+        </p>
+      )}
       <button
         type="submit"
-        className="rounded-lg bg-remedy-orange px-6 py-4 text-lg font-bold text-white shadow hover:brightness-110"
+        disabled={state === "submitting"}
+        className="rounded-lg bg-remedy-orange px-6 py-4 text-lg font-bold text-white shadow hover:brightness-110 disabled:opacity-60"
       >
-        Send Message →
+        {state === "submitting" ? "Sending..." : "Send Message →"}
       </button>
     </form>
   );
