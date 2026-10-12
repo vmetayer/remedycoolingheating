@@ -4,12 +4,12 @@ import { PHONE_DISPLAY, PHONE_TEL, EMAIL, SERVICES, CITIES } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-remedy-dark pb-24 text-white md:pb-0">
+    <footer className="bg-[#0d0d1a] pb-24 text-white md:pb-0">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div>
           <div className="font-barlow text-2xl font-extrabold">REMEDY</div>
-          <div className="text-sm font-semibold uppercase tracking-widest text-remedy-teal">
+          <div className="text-sm font-semibold uppercase tracking-widest text-remedy-pink">
             Cooling &amp; Heating
           </div>
           <p className="mt-3 text-sm text-blue-100">

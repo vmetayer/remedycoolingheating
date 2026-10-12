@@ -11,7 +11,7 @@ export default function CTABand({ variant = "standard", headline, subtext }: Pro
   const bg =
     variant === "emergency"
       ? "bg-gradient-to-r from-remedy-emergency to-remedy-orange"
-      : "bg-remedy-dark";
+      : "bg-[#0d0d1a]";
 
   return (
     <section className={`${bg} w-full`}>
@@ -25,7 +25,7 @@ export default function CTABand({ variant = "standard", headline, subtext }: Pro
           className={`mt-2 flex items-center gap-3 rounded-xl px-8 py-4 text-xl font-extrabold shadow-lg hover:brightness-110 ${
             variant === "emergency"
               ? "bg-white text-remedy-emergency"
-              : "bg-remedy-orange text-white"
+              : "bg-remedy-pink text-white"
           }`}
         >
           <Phone className="h-6 w-6" /> {PHONE_DISPLAY}

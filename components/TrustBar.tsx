@@ -14,7 +14,7 @@ export default function TrustBar() {
       <div className="mx-auto flex max-w-7xl items-center gap-8 overflow-x-auto px-4 py-4 sm:px-6 md:justify-between">
         {ITEMS.map(({ icon: Icon, label }) => (
           <div key={label} className="flex shrink-0 items-center gap-2">
-            <Icon className="h-5 w-5 text-remedy-teal" />
+            <Icon className="h-5 w-5 text-remedy-pink" />
             <span className="whitespace-nowrap text-sm font-semibold text-remedy-dark">
               {label}
             </span>

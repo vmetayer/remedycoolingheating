@@ -26,7 +26,7 @@ export default function StickyCallBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 flex h-16 md:hidden">
       <a
         href={PHONE_TEL}
-        className="flex w-[70%] items-center justify-center gap-2 bg-remedy-orange text-lg font-bold text-white"
+        className="flex w-[70%] items-center justify-center gap-2 bg-remedy-pink text-lg font-bold text-white"
       >
         📞 Call Now
       </a>

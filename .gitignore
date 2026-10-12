@@ -41,9 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # Large binary images — served from Vercel build, not git
-public/images/*.jpg
-public/images/*.png
-public/images/*.webp
-public/brand/*.jpg
-public/brand/*.png
 workspace/*.png

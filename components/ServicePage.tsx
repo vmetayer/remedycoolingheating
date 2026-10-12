@@ -46,17 +46,19 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-remedy-dark to-remedy-blue text-white">
-        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
-          <h1 className="font-barlow text-4xl font-extrabold sm:text-5xl">{data.h1}</h1>
+      <section className="relative bg-remedy-dark overflow-hidden py-20 text-white">
+        <div className="absolute inset-0 bg-remedy-wine/40" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
+          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-remedy-pink">/ HVAC Service</p>
+          <h1 className="font-barlow text-4xl font-black uppercase sm:text-5xl lg:text-6xl">{data.h1}</h1>
           {data.intro.map((p) => (
-            <p key={p.slice(0, 40)} className="mt-4 max-w-3xl text-lg leading-relaxed text-blue-50">
+            <p key={p.slice(0, 40)} className="mt-4 max-w-3xl text-lg leading-relaxed text-white/70">
               {p}
             </p>
           ))}
           <a
             href={PHONE_TEL}
-            className="mt-8 inline-block rounded-xl bg-remedy-orange px-8 py-4 text-lg font-bold text-white shadow-lg hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-remedy-pink px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-remedy-pink-dark"
           >
             📞 Call Now — {PHONE_DISPLAY}
           </a>
@@ -65,13 +67,13 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Common problems */}
       <section className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-        <h2 className="font-barlow text-3xl font-extrabold text-remedy-dark">
+        <h2 className="font-barlow text-3xl font-black uppercase text-remedy-dark">
           Common Problems I Fix
         </h2>
         <ul className="mt-6 space-y-3">
           {data.problems.map((p) => (
             <li key={p} className="flex items-start gap-3">
-              <Wrench className="mt-1 h-5 w-5 shrink-0 text-remedy-orange" />
+              <Wrench className="mt-1 h-5 w-5 shrink-0 text-remedy-pink" />
               <span className="text-gray-700">{p}</span>
             </li>
           ))}
@@ -81,7 +83,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* Checklist */}
       <section className="bg-remedy-mist">
         <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-          <h2 className="font-barlow text-3xl font-extrabold text-remedy-dark">
+          <h2 className="font-barlow text-3xl font-black uppercase text-remedy-dark">
             What Happens When You Hire Me
           </h2>
           <ul className="mt-6 space-y-3">
@@ -97,11 +99,11 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
       {/* Pricing */}
       <section className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-        <h2 className="font-barlow text-3xl font-extrabold text-remedy-dark">
+        <h2 className="font-barlow text-3xl font-black uppercase text-remedy-dark">
           Simple, Honest Pricing
         </h2>
         <div className="mt-6 rounded-xl border-2 border-remedy-teal bg-white p-6 shadow-sm">
-          <p className="font-barlow text-2xl font-extrabold text-remedy-blue">
+          <p className="font-barlow text-2xl font-extrabold text-remedy-pink">
             $150 Flat Assessment Fee
           </p>
           <p className="mt-3 leading-relaxed text-gray-700">
@@ -116,7 +118,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* Related services */}
       <section className="bg-remedy-mist">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
-          <h2 className="font-barlow text-3xl font-extrabold text-remedy-dark">
+          <h2 className="font-barlow text-3xl font-black uppercase text-remedy-dark">
             Related Services
           </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
@@ -126,9 +128,9 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 href={`/${r.slug}`}
                 className="rounded-xl bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-lg"
               >
-                <h3 className="font-barlow text-xl font-bold text-remedy-blue">{r.name}</h3>
+                <h3 className="font-barlow text-xl font-bold text-remedy-pink">{r.name}</h3>
                 <p className="mt-2 text-sm text-gray-600">{r.blurb}</p>
-                <span className="mt-3 inline-block text-sm font-semibold text-remedy-orange">
+                <span className="mt-3 inline-block text-sm font-semibold text-remedy-pink">
                   Learn more →
                 </span>
               </Link>

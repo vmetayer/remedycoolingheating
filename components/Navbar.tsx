@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 lg:flex">
           <div className="group relative">
-            <button className="flex items-center gap-1 py-6 text-sm font-semibold text-remedy-dark hover:text-remedy-blue">
+            <button className="flex items-center gap-1 py-6 text-sm font-semibold text-remedy-dark hover:text-remedy-pink">
               Services <ChevronDown className="h-4 w-4" />
             </button>
             <div className="invisible absolute left-0 top-full w-64 rounded-b-lg bg-white py-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
@@ -31,23 +31,23 @@ export default function Navbar() {
                 <Link
                   key={s.slug}
                   href={`/${s.slug}`}
-                  className="block px-4 py-2.5 text-sm font-medium text-remedy-dark hover:bg-remedy-mist hover:text-remedy-blue"
+                  className="block px-4 py-2.5 text-sm font-medium text-remedy-dark hover:bg-remedy-mist hover:text-remedy-pink"
                 >
                   {s.name}
                 </Link>
               ))}
             </div>
           </div>
-          <Link href="/#service-areas" className="text-sm font-semibold text-remedy-dark hover:text-remedy-blue">
+          <Link href="/#service-areas" className="text-sm font-semibold text-remedy-dark hover:text-remedy-pink">
             Service Areas
           </Link>
-          <Link href="/about" className="text-sm font-semibold text-remedy-dark hover:text-remedy-blue">
+          <Link href="/about" className="text-sm font-semibold text-remedy-dark hover:text-remedy-pink">
             About
           </Link>
-          <Link href="/#reviews" className="text-sm font-semibold text-remedy-dark hover:text-remedy-blue">
+          <Link href="/#reviews" className="text-sm font-semibold text-remedy-dark hover:text-remedy-pink">
             Reviews
           </Link>
-          <Link href="/contact" className="text-sm font-semibold text-remedy-dark hover:text-remedy-blue">
+          <Link href="/contact" className="text-sm font-semibold text-remedy-dark hover:text-remedy-pink">
             Contact
           </Link>
         </nav>
@@ -59,7 +59,7 @@ export default function Navbar() {
           </a>
           <a
             href={PHONE_TEL}
-            className="flex items-center gap-2 rounded-lg bg-remedy-orange px-5 py-2.5 text-sm font-bold text-white shadow hover:brightness-110"
+            className="flex items-center gap-2 rounded-lg bg-remedy-pink px-5 py-2.5 text-sm font-bold text-white shadow hover:brightness-110"
           >
             <Phone className="h-4 w-4" /> Call Now
           </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
               />
             </button>
             {servicesOpen && (
-              <div className="mb-2 border-l-2 border-remedy-mist pl-4">
+              <div className="mb-2 border-l-2 border-gray-100 pl-4">
                 {SERVICES.map((s) => (
                   <Link
                     key={s.slug}
@@ -128,9 +128,9 @@ export default function Navbar() {
           <div className="border-t border-gray-100 p-4 pb-6">
             <a
               href={PHONE_TEL}
-              className="flex items-center justify-center gap-2 rounded-xl bg-remedy-orange py-4 text-lg font-bold text-white shadow-lg"
+              className="flex items-center justify-center gap-2 rounded-xl bg-remedy-pink py-4 text-lg font-bold text-white shadow-lg"
             >
-              <Phone className="h-5 w-5" /> Call Now — {PHONE_DISPLAY}
+              <Phone className="h-5 w-5" /> GET FREE QUOTE
             </a>
           </div>
         </div>

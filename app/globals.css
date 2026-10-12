@@ -2,22 +2,32 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand colors matched to Remedy Rx logo */
-  --remedy-blue: #1b3899;   /* Navy blue — "COOLING" from logo */
-  --remedy-dark: #0f2461;   /* Darker navy — headers, footer */
-  --remedy-orange: #cc2222; /* Brand red — "REMEDY" Rx mark, CTAs */
-  --remedy-teal: #cc2222;   /* Unified to brand red */
+  /* Remedy brand — dark + hot pink design system */
+  --remedy-pink: #d4205e;     /* Hot pink — primary CTA, accents */
+  --remedy-pink-dark: #a8184a; /* Darker pink — hover states */
+  --remedy-blue: #d4205e;     /* Alias for compatibility */
+  --remedy-dark: #0d0d1a;     /* Deep dark — hero, footer */
+  --remedy-wine: #5c0f2a;     /* Wine/burgundy — services section */
+  --remedy-charcoal: #1a1a2e; /* Form/card backgrounds */
+  --remedy-input: #252535;    /* Input field backgrounds */
+  --remedy-orange: #d4205e;   /* Alias for compatibility */
+  --remedy-teal: #d4205e;     /* Alias for compatibility */
   --remedy-mist: #f4f7fa;
-  --remedy-emergency: #cc2222;
+  --remedy-emergency: #d4205e;
 }
 
 @theme {
-  --color-remedy-blue: #1b3899;
-  --color-remedy-dark: #0f2461;
-  --color-remedy-orange: #cc2222;
-  --color-remedy-teal: #cc2222;
+  --color-remedy-pink: #d4205e;
+  --color-remedy-pink-dark: #a8184a;
+  --color-remedy-blue: #d4205e;
+  --color-remedy-dark: #0d0d1a;
+  --color-remedy-wine: #5c0f2a;
+  --color-remedy-charcoal: #1a1a2e;
+  --color-remedy-input: #252535;
+  --color-remedy-orange: #d4205e;
+  --color-remedy-teal: #d4205e;
   --color-remedy-mist: #f4f7fa;
-  --color-remedy-emergency: #cc2222;
+  --color-remedy-emergency: #d4205e;
   --font-barlow: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
   --font-inter: "Inter", system-ui, sans-serif;
 }
@@ -40,4 +50,15 @@ h4 {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Outline text effect — "REPAIRED" in hero */
+.text-outline {
+  -webkit-text-stroke: 3px #d4205e;
+  color: transparent;
+}
+
+/* Service card photo overlay */
+.service-card-overlay {
+  background: linear-gradient(to top, rgba(13,13,26,0.95) 0%, rgba(13,13,26,0.5) 50%, rgba(13,13,26,0.2) 100%);
 }

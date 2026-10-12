@@ -51,7 +51,7 @@ export default function CityPage({ data }: { data: CityPageData }) {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-remedy-dark to-remedy-blue text-white">
+      <section className="relative bg-remedy-dark overflow-hidden py-20 text-white">
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
           <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-remedy-teal">
             <MapPin className="h-4 w-4" /> Service Area
@@ -59,7 +59,7 @@ export default function CityPage({ data }: { data: CityPageData }) {
           <h1 className="mt-3 font-barlow text-4xl font-extrabold sm:text-5xl">
             HVAC Repair &amp; Installation in {data.city}, {data.state}
           </h1>
-          <p className="mt-4 text-lg text-blue-50">
+          <p className="mt-4 text-lg text-white/70">
             {data.driveTime} away — I&apos;m in {data.city} constantly.
           </p>
           <a
@@ -95,10 +95,10 @@ export default function CityPage({ data }: { data: CityPageData }) {
                   href={`/${s.slug}`}
                   className="rounded-xl bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <Icon className="h-8 w-8 text-remedy-blue" />
+                  <Icon className="h-8 w-8 text-remedy-pink" />
                   <h3 className="mt-3 font-barlow text-xl font-bold text-remedy-dark">{s.name}</h3>
                   <p className="mt-2 text-sm text-gray-600">{s.short}</p>
-                  <span className="mt-3 inline-block text-sm font-semibold text-remedy-orange">
+                  <span className="mt-3 inline-block text-sm font-semibold text-remedy-pink">
                     Learn more →
                   </span>
                 </Link>

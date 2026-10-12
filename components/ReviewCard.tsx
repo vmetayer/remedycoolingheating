@@ -25,7 +25,7 @@ export default function ReviewCard({ quote, name, city, service }: Props) {
             {city} · {service}
           </div>
         </div>
-        <span className="shrink-0 rounded-full bg-remedy-mist px-3 py-1 text-xs font-semibold text-remedy-blue">
+        <span className="shrink-0 rounded-full bg-remedy-mist px-3 py-1 text-xs font-semibold text-remedy-pink">
           via Thumbtack
         </span>
       </div>
