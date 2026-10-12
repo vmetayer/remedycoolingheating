@@ -9,6 +9,10 @@ jobs:
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
+    env:
+      # Pin to the Vercel project that owns remedycoolingheating.com
+      VERCEL_ORG_ID: team_Z8j7qbjiChXCbdtmYef7pVWQ
+      VERCEL_PROJECT_ID: prj_GSUgzYsHZ3a2y4aBUrOjuqt37GHx
     steps:
       - uses: actions/checkout@v4
 
